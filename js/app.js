@@ -6,7 +6,7 @@ document.getElementById('openlibrary-Search').addEventListener('click', () => {
     const openlibraryValueText = openlibraryValue.value;
 
 
-    const url = `http://openlibrary.org/search.json?q=${openlibraryValueText}`
+    const url = `HTTPs://openlibrary.org/search.json?q=${openlibraryValueText}`
     fetch(url)
         .then(res => res.json())
         .then(data => loadItem(data.docs))
@@ -16,6 +16,9 @@ document.getElementById('openlibrary-Search').addEventListener('click', () => {
 
 
 const loadItem = (data) => {
+
+    console.log(data);
+
     const tolatItem = document.getElementById("demo");
     tolatItem.innerHTML = `
     <h3 class="text-center text-capitalize">About <span class="text-muted fs-3">${data.length}</span> results</h3>
@@ -28,7 +31,7 @@ const loadItem = (data) => {
 
     const error = document.getElementById('demo2');
 
-    if (!data) {
+    if (data.length == 0) {
 
 
         error.innerHTML = `<p class="text-danger">NO Result Found</p>`;
@@ -58,7 +61,7 @@ const loadItem = (data) => {
         <div class="card-body">
             <h4 class="card-title">${showItem?.title?.slice(0,100) ? showItem?.title:''}</h4>
             <h5 class="card-title">${showItem?.author_name?.[0] ? showItem?.author_name?.[0]:''}</h5>
-            <p class="card-text">${showItem?.publish_date?.slice(0,100) ?showItem?.publish_date:''}</p>
+            <p class="card-text">${showItem?.first_publish_year?.slice(0,100) ?showItem?.first_publish_year:''}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
