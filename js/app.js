@@ -59,9 +59,9 @@ const loadItem = (data) => {
         <div class="card my-3" style="width: 18rem;">
         <img src=" https://covers.openlibrary.org/b/id/${showItem.cover_i ? showItem.cover_i:''}-M.jpg" class="card-img-top"style="height: 240px;" alt="...">
         <div class="card-body">
-            <h4 class="card-title">${showItem?.title?.slice(0,100) ? showItem?.title:''}</h4>
+            <h4 class="card-title">${showItem?.title ? showItem?.title:''}</h4>
             <h5 class="card-title">${showItem?.author_name?.[0] ? showItem?.author_name?.[0]:''}</h5>
-            <p class="card-text">${showItem?.first_publish_year?.slice(0,100) ?showItem?.first_publish_year:''}</p>
+            <p class="card-text">${showItem?.first_publish_year ?showItem?.first_publish_year:''}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
