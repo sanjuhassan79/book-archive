@@ -27,7 +27,7 @@ const loadItem = (data) => {
     //Start Error Handle
     const error = document.getElementById('error');
 
-    if (data.length == 0) {
+    if (data.length === 0) {
         error.innerHTML = `
         <h3 class="text-center text-muted text-capitalize">NO Result Found</h3>`;
     } else {
