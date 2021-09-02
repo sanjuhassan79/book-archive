@@ -15,7 +15,7 @@ const loadItem = (data) => {
 
 
     //Start Results Item
-    const tolatItem = document.getElementById("demo");
+    const tolatItem = document.getElementById("results");
     tolatItem.innerHTML = `
     <h3 class="text-center text-capitalize">About <span class="text-muted fs-3">${data.length}</span> results</h3>
    `;
