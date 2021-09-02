@@ -2,6 +2,7 @@ document.getElementById('openlibrary-Search').addEventListener('click', () => {
 
     const openlibraryValue = document.getElementById('openlibrary-value');
     const openlibraryValueText = openlibraryValue.value;
+    openlibraryValue.value = '';
 
     const url = `HTTPs://openlibrary.org/search.json?q=${openlibraryValueText}`
     fetch(url)
